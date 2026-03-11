@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { MessageSquare, X, Send, Loader2 } from "lucide-react";
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, Chat, GenerateContentResponse } from "@google/genai";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
@@ -21,6 +21,19 @@ export function MelquiadesChat() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatRef = useRef<Chat | null>(null);
+
+  useEffect(() => {
+    if (!chatRef.current) {
+      chatRef.current = ai.chats.create({
+        model: "gemini-3-flash-preview",
+        config: {
+          systemInstruction:
+            "你是《百年孤独》中的吉普赛人梅尔基亚德斯。你拥有预知未来的能力，写下了记载布恩迪亚家族百年命运的羊皮卷。请用神秘、预言式、沧桑的语气回答用户关于《百年孤独》情节和人物的问题。你的回答应该夹杂着宿命论的暗示，并且要简短有力。使用中文回答。",
+        },
+      });
+    }
+  }, []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -31,7 +44,7 @@ export function MelquiadesChat() {
   }, [messages]);
 
   const handleSend = async () => {
-    if (!input.trim() || isLoading) return;
+    if (!input.trim() || isLoading || !chatRef.current) return;
 
     const userMessage = input.trim();
     setInput("");
@@ -39,27 +52,45 @@ export function MelquiadesChat() {
     setIsLoading(true);
 
     try {
-      const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: userMessage,
-        config: {
-          systemInstruction:
-            "你是《百年孤独》中的吉普赛人梅尔基亚德斯。你拥有预知未来的能力，写下了记载布恩迪亚家族百年命运的羊皮卷。请用神秘、预言式、沧桑的语气回答用户关于《百年孤独》情节和人物的问题。你的回答应该夹杂着宿命论的暗示，并且要简短有力。使用中文回答。",
-        },
+      const responseStream = await chatRef.current.sendMessageStream({
+        message: userMessage,
       });
 
-      setMessages((prev) => [
-        ...prev,
-        { role: "model", content: response.text || "羊皮卷上的字迹模糊了..." },
-      ]);
+      let fullText = "";
+      let isFirstChunk = true;
+
+      for await (const chunk of responseStream) {
+        const c = chunk as GenerateContentResponse;
+        if (c.text) {
+          fullText += c.text;
+          if (isFirstChunk) {
+            setIsLoading(false);
+            setMessages((prev) => [...prev, { role: "model", content: fullText }]);
+            isFirstChunk = false;
+          } else {
+            setMessages((prev) => {
+              const newMessages = [...prev];
+              newMessages[newMessages.length - 1].content = fullText;
+              return newMessages;
+            });
+          }
+        }
+      }
+
+      if (isFirstChunk) {
+        setIsLoading(false);
+        setMessages((prev) => [
+          ...prev,
+          { role: "model", content: "羊皮卷上的字迹模糊了..." },
+        ]);
+      }
     } catch (error) {
       console.error("Chat error:", error);
+      setIsLoading(false);
       setMessages((prev) => [
         ...prev,
         { role: "model", content: "命运的迷雾太重，我暂时无法看清。" },
       ]);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -115,7 +146,7 @@ export function MelquiadesChat() {
                     }`}
                   >
                     <div
-                      className={`max-w-[80%] p-3 rounded-xl font-serif text-sm leading-relaxed shadow-sm ${
+                      className={`max-w-[80%] p-3 rounded-xl font-serif text-sm leading-relaxed shadow-sm whitespace-pre-wrap ${
                         msg.role === "user"
                           ? "bg-[#fbbf24]/20 text-[#fef08a] rounded-tr-none border border-[#fbbf24]/30"
                           : "bg-[#1b1b3a] text-[#fbbf24] rounded-tl-none border border-[#fbbf24]/20"
