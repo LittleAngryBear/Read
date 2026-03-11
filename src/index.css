@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-serif:
+    "Cormorant Garamond", ui-serif, Georgia, Cambria, "Times New Roman", Times,
+    serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-macondo-dark: #0a0a09;
+  --color-macondo-paper: #e8e4d9;
+  --color-macondo-gold: #c6a87c;
+  --color-macondo-rust: #8b4513;
+  --color-macondo-faded: #a39e93;
+
+  --animate-shimmer: shimmer 2s infinite;
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+
+body {
+  background-color: var(--color-macondo-dark);
+  color: var(--color-macondo-paper);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Custom scrollbar for a more elegant feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-macondo-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-macondo-faded);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-macondo-gold);
+}
