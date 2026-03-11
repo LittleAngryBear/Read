@@ -1,15 +1,18 @@
 import { motion, AnimatePresence } from "motion/react";
 import { Character } from "../data/characters";
-import { X, Clock, Quote, Link as LinkIcon, Sparkles } from "lucide-react";
+import { X, Clock, Quote, Link as LinkIcon, Sparkles, Globe, CloudRain, Wind } from "lucide-react";
 import { cn } from "../lib/utils";
 
 interface CharacterModalProps {
   character: Character | null;
   onClose: () => void;
   onQuoteClick?: (quote: string) => void;
+  onOpenEarth?: () => void;
+  onOpenRain?: () => void;
+  onOpenAscension?: () => void;
 }
 
-export function CharacterModal({ character, onClose, onQuoteClick }: CharacterModalProps) {
+export function CharacterModal({ character, onClose, onQuoteClick, onOpenEarth, onOpenRain, onOpenAscension }: CharacterModalProps) {
   return (
     <AnimatePresence>
       {character && (
@@ -138,6 +141,40 @@ export function CharacterModal({ character, onClose, onQuoteClick }: CharacterMo
                         </div>
                       )}
                     </div>
+                  </section>
+                )}
+
+                {character.id === "jose-arcadio-buendia" && onOpenEarth && (
+                  <section className="pt-6 mt-6 border-t border-[#fbbf24]/10">
+                    <button
+                      onClick={onOpenEarth}
+                      className="w-full py-4 bg-[#fbbf24]/10 border border-[#fbbf24]/30 rounded-xl text-[#fbbf24] font-serif text-lg hover:bg-[#fbbf24]/20 hover:scale-[1.02] transition-all shadow-[0_0_20px_rgba(251,191,36,0.15)] flex items-center justify-center gap-3"
+                    >
+                      <Globe className="w-5 h-5" />
+                      进入全息橘子地球
+                    </button>
+                  </section>
+                )}
+                {character.id === "gerineldo-marquez" && onOpenRain && (
+                  <section className="pt-6 mt-6 border-t border-[#60a5fa]/10">
+                    <button
+                      onClick={onOpenRain}
+                      className="w-full py-4 bg-[#60a5fa]/10 border border-[#60a5fa]/30 rounded-xl text-[#60a5fa] font-serif text-lg hover:bg-[#60a5fa]/20 hover:scale-[1.02] transition-all shadow-[0_0_20px_rgba(96,165,250,0.15)] flex items-center justify-center gap-3"
+                    >
+                      <CloudRain className="w-5 h-5" />
+                      进入马孔多的雨季
+                    </button>
+                  </section>
+                )}
+                {character.id === "remedios-the-beauty" && onOpenAscension && (
+                  <section className="pt-6 mt-6 border-t border-[#fef08a]/10">
+                    <button
+                      onClick={onOpenAscension}
+                      className="w-full py-4 bg-[#fef08a]/10 border border-[#fef08a]/30 rounded-xl text-[#fef08a] font-serif text-lg hover:bg-[#fef08a]/20 hover:scale-[1.02] transition-all shadow-[0_0_20px_rgba(254,240,138,0.15)] flex items-center justify-center gap-3"
+                    >
+                      <Wind className="w-5 h-5" />
+                      观看升天的床单
+                    </button>
                   </section>
                 )}
               </div>

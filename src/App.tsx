@@ -10,6 +10,10 @@ import { CharacterEffects } from "./components/CharacterEffects";
 import { MelquiadesChat } from "./components/MelquiadesChat";
 import { TimeSlider } from "./components/TimeSlider";
 import { IceShatterEffect } from "./components/IceShatterEffect";
+import { BackgroundMusic } from "./components/BackgroundMusic";
+import { StandaloneEarthView } from "./components/StandaloneEarthView";
+import { StandaloneRainView } from "./components/StandaloneRainView";
+import { StandaloneAscensionView } from "./components/StandaloneAscensionView";
 
 export default function App() {
   const [hasEntered, setHasEntered] = useState(false);
@@ -18,6 +22,9 @@ export default function App() {
   const [currentGeneration, setCurrentGeneration] = useState(1);
   const [showHurricane, setShowHurricane] = useState(false);
   const [activeEffect, setActiveEffect] = useState<'ice-shatter' | null>(null);
+  const [showEarthView, setShowEarthView] = useState(false);
+  const [showRainView, setShowRainView] = useState(false);
+  const [showAscensionView, setShowAscensionView] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleSelectCharacter = (char: Character) => {
@@ -59,6 +66,7 @@ export default function App() {
   return (
     <div className="relative w-full h-screen bg-[#050510] overflow-hidden">
       <Atmosphere />
+      <BackgroundMusic play={hasEntered} />
 
       <AnimatePresence mode="wait">
         {!hasEntered ? (
@@ -93,6 +101,9 @@ export default function App() {
               character={modalCharacter}
               onClose={handleCloseModal}
               onQuoteClick={handleQuoteClick}
+              onOpenEarth={() => setShowEarthView(true)}
+              onOpenRain={() => setShowRainView(true)}
+              onOpenAscension={() => setShowAscensionView(true)}
             />
 
             {/* Time Slider */}
@@ -112,6 +123,18 @@ export default function App() {
             {activeEffect === 'ice-shatter' && (
               <IceShatterEffect onClose={() => setActiveEffect(null)} />
             )}
+
+            <AnimatePresence>
+              {showEarthView && (
+                <StandaloneEarthView onClose={() => setShowEarthView(false)} />
+              )}
+              {showRainView && (
+                <StandaloneRainView onClose={() => setShowRainView(false)} />
+              )}
+              {showAscensionView && (
+                <StandaloneAscensionView onClose={() => setShowAscensionView(false)} />
+              )}
+            </AnimatePresence>
           </div>
         )}
       </AnimatePresence>

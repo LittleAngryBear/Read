@@ -32,7 +32,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "求知的孤独与疯狂",
     description: "布恩迪亚家族的族长和马孔多的建立者。他拥有巨大的体力，外表粗犷，对吉普赛人梅尔基亚德斯带来的各种科学发明（如磁铁、放大镜、炼金术）沉迷不已，整日待在实验室里。",
     relationshipsText: "妻子：乌尔苏拉；朋友：梅尔基亚德斯；",
-    quote: "地球是圆的，就像一个橘子。"
+    quote: "地球是圆的，就像个橘子。"
   },
   "ursula-iguaran": {
     id: "ursula-iguaran",
@@ -49,7 +49,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "清醒的孤独与徒劳",
     description: "布恩迪亚家族的女族长。身材娇小但精力充沛，极具商业头脑，靠制作小动物糖果起家。她务实且极具保护欲，活了100多岁，晚年双目失明却依然能凭借记忆在家中穿梭。",
     relationshipsText: "丈夫：何塞·阿尔卡蒂奥·布恩迪亚；",
-    quote: "仿佛时间转了一个圈，我们又回到了起点。"
+    quote: "时间并没有流逝，不过是在原地转圈。"
   },
   "jose-arcadio": {
     id: "jose-arcadio",
@@ -66,7 +66,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "肉体的孤独与流浪",
     description: "长子。继承了父亲的巨大力量，体格健壮如牛，满身都是水手纹身。他缺乏想象力，性格冲动，曾与吉普赛人私奔，多年后带着粗犷的野性回到马孔多。",
     relationshipsText: "妻子：丽贝卡；情人：庇拉尔·特尔内拉；",
-    quote: "我回来是因为我不想死在外面。"
+    quote: "一道血线从门下流出，穿过客厅，到街上……一直流到乌尔苏拉的厨房。"
   },
   "aureliano-buendia": {
     id: "aureliano-buendia",
@@ -100,7 +100,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "怨恨的孤独与拒绝",
     description: "最小的孩子。外表冷漠，内心却充满苦涩与怨恨。她一生都戴着黑色的绷带掩盖烧伤的手，终生未嫁，将时间消磨在无休止的手工活上。",
     relationshipsText: "宿敌：丽贝卡；追求者：皮埃特罗·克雷斯皮、赫里内尔多·马尔克斯；乱伦对象：奥雷里亚诺·何塞；",
-    quote: "我不是为了任何人而活，我是为了我自己。"
+    quote: "她白天缝，晚上拆，不是为了逃避孤独，而是为了度过孤独。"
   },
   "rebeca": {
     id: "rebeca",
@@ -117,7 +117,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "自闭的孤独与狂热",
     description: "带着父母遗骨来到马孔多的孤儿。性格孤僻，焦虑时有吃泥土和墙皮的怪癖。她拥有惊人的美貌和野性，曾给家族带来失眠症。",
     relationshipsText: "丈夫：何塞·阿尔卡蒂奥；前未婚夫：皮埃特罗·克雷斯皮；宿敌：阿玛兰妲；",
-    quote: "她吃泥土，不是因为饿，而是因为绝望。"
+    quote: "她又开始吃起泥土来。她抓起一把泥土，带着一种绝望的贪婪塞进嘴里。"
   },
   "arcadio": {
     id: "arcadio",
@@ -134,7 +134,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "暴政的孤独与迷失",
     description: "何塞·阿尔卡蒂奥和庇拉尔·特尔内拉的儿子。体格高大，性格残暴。在内战期间成为马孔多残暴的独裁者。",
     relationshipsText: "妻子：圣索菲亚·德·拉·彼达；母亲/暗恋对象：庇拉尔·特尔内拉；",
-    quote: "啊，马孔多，你这片被诅咒的土地。"
+    quote: "告诉我妻子，生个女儿叫乌尔苏拉，生个儿子叫何塞·阿尔卡蒂奥。"
   },
   "aureliano-jose": {
     id: "aureliano-jose",
@@ -151,7 +151,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "乱伦的孤独与宿命",
     description: "奥雷里亚诺上校和庇拉尔·特尔内拉的儿子。具有军事倾向，早年加入父亲的军队。他性格痴迷，对姑姑阿玛兰妲有着狂热的迷恋。",
     relationshipsText: "母亲：庇拉尔·特尔内拉；乱伦对象：阿玛兰妲；",
-    quote: "他唯一的愿望就是死在阿玛兰妲的怀里。"
+    quote: "我要娶你，这辈子不行，下辈子也要娶你。"
   },
   "santa-sofia-de-la-piedad": {
     id: "santa-sofia-de-la-piedad",
@@ -168,11 +168,11 @@ export const characters: Record<string, Character> = {
     solitudeType: "隐形的孤独与奉献",
     description: "阿尔卡蒂奥的妻子。性格安静、谦逊，像影子一样在家族中穿梭。她一生都在家族逐渐衰败的过程中默默侍奉着他们，不求回报。",
     relationshipsText: "丈夫：阿尔卡蒂奥；恩人：庇拉尔·特尔内拉；",
-    quote: "她像影子一样在这个家里穿梭，从未留下痕迹。"
+    quote: "她没有向任何人告别，就带着她那点可怜的行李离开了。"
   },
   "remedios-the-beauty": {
     id: "remedios-the-beauty",
-    name: "俏姑娘蕾梅黛丝",
+    name: "美人儿蕾梅黛丝",
     generation: 4,
     birthGen: 4,
     deathGen: 4,
@@ -185,7 +185,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "绝美的孤独与超脱",
     description: "拥有超凡脱俗、惊人美貌的女子。她性格纯真，仿佛不属于这个世界，经常赤身裸体在屋里游荡。她对世俗的礼仪和爱情一无所知。",
     relationshipsText: "追求者：无数为她而死的男人；",
-    quote: "她不属于这个世界，她属于天空。"
+    quote: "她连同那些床单一起冉冉升起，消失在连飞得最高的老鹰也无法企及的高空。"
   },
   "jose-arcadio-segundo": {
     id: "jose-arcadio-segundo",
@@ -219,7 +219,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "狂欢的孤独与虚空",
     description: "何塞·阿尔卡蒂奥第二的双胞胎兄弟。体型肥胖，性格喧闹，喜欢举办狂欢派对。他在牲畜繁殖上运气极佳，一生都在挥霍财富。",
     relationshipsText: "妻子：费尔南达·德尔·卡皮奥；情妇：佩特拉·科特斯；",
-    quote: "只要有音乐和酒，世界就不会毁灭。"
+    quote: "他像一头被阉割的公牛一样哭泣。"
   },
   "fernanda-del-carpio": {
     id: "fernanda-del-carpio",
@@ -236,7 +236,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "教条的孤独与虚荣",
     description: "在遥远阴郁的城市里被当作女王抚养长大。她性格刻板，具有宗教狂热和贵族妄想，给混乱的布恩迪亚家族带来了严格的规矩。",
     relationshipsText: "丈夫：奥雷里亚诺第二；女儿：梅梅、阿玛兰妲·乌尔苏拉；",
-    quote: "在这个家里，除了我，没有人懂得什么是体面。"
+    quote: "如果不是身染暗疾，不是遗失信件，费尔南达才不会在乎下雨，因为她的一生本就阴雨不停。"
   },
   "renata-remedios": {
     id: "meme",
@@ -253,7 +253,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "失语的孤独与囚禁",
     description: "一个活泼、叛逆的女孩。喜欢弹奏古钢琴，爱上了总是被黄蝴蝶环绕的机械师。度过了一段短暂而热烈的青春时光。",
     relationshipsText: "恋人：马乌里肖·巴比伦；母亲：费尔南达·德尔·卡皮奥；",
-    quote: "她闭上嘴巴，决定用一生的沉默来反抗。"
+    quote: "从那一刻起，她再也没有说过一句话，直到在修道院里老死。"
   },
   "jose-arcadio-ii": {
     id: "jose-arcadio-ii",
@@ -270,7 +270,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "堕落的孤独与贪婪",
     description: "被送到罗马准备成为教皇，却过着颓废的生活。他性格贪婪，回到马孔多后与一群流浪儿厮混，终日寻找曾祖母隐藏的金币。",
     relationshipsText: "母亲：费尔南达·德尔·卡皮奥；",
-    quote: "金子，只有金子才能填补内心的空虚。"
+    quote: "他满脑子想的都是曾祖母藏在地下的金币。"
   },
   "amaranta-ursula": {
     id: "amaranta-ursula",
@@ -287,7 +287,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "活力的孤独与乱伦",
     description: "最后一个女性布恩迪亚。充满活力和现代气息，曾在欧洲留学。她带着不切实际的乐观回到故乡，希望能凭借一己之力复兴破败的马孔多。",
     relationshipsText: "丈夫：加斯东；情人：奥雷里亚诺·巴比伦；",
-    quote: "我们将在这个废墟上建立一个新的世界。"
+    quote: "她带着一种不切实际的乐观，试图在废墟上重建马孔多。"
   },
   "aureliano-babilonia": {
     id: "aureliano-babilonia",
@@ -304,7 +304,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "破译的孤独与终结",
     description: "梅梅的私生子，从小被费尔南达像隐形人一样藏在屋里。他具有极高的学者风范，精通梵文，将一生倾注于破译梅尔基亚德斯留下的羊皮卷。",
     relationshipsText: "母亲：梅梅；情人：阿玛兰妲·乌尔苏拉；",
-    quote: "羊皮卷上所写的一切自始至终、永远不会重复。"
+    quote: "羊皮卷上所载一切自永远至永远不会再重复，因为注定经受百年孤独的家族不会有第二次机会在大地上出现。"
   },
   "aureliano-last": {
     id: "aureliano-last",
@@ -338,7 +338,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "纯真的孤独与早夭",
     description: "镇长的女儿，拥有纯真和青春的魅力。她性格温婉，像一个精致的洋娃娃，给这个沉闷的家带来了一段短暂的欢乐与生机。",
     relationshipsText: "丈夫：奥雷里亚诺·布恩迪亚上校；",
-    quote: "她像一只快乐的小鸟，短暂地停留在马孔多。"
+    quote: "她在一滩血泊中死去了，肚子里还怀着一对双胞胎。"
   },
   "pilar-ternera": {
     id: "pilar-ternera",
@@ -355,7 +355,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "欲望的孤独与旁观",
     description: "一个欢乐、性感的女人，身上带有烟草和爽身粉的味道。她精通通过纸牌占卜未来，是布恩迪亚家族多代男人的性启蒙者和精神慰藉。",
     relationshipsText: "情人：何塞·阿尔卡蒂奥、奥雷里亚诺上校；儿子：阿尔卡蒂奥、奥雷里亚诺·何塞；",
-    quote: "她用纸牌看透了所有人的命运，却无法改变任何一个。"
+    quote: "她活了一百四十五岁，最后死在藤椅上。"
   },
   "mauricio-babilonia": {
     id: "mauricio-babilonia",
@@ -372,7 +372,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "瘫痪的孤独与黄蝴蝶",
     description: "香蕉公司的机械师，外表英俊，出现时总是伴随着一群黄蝴蝶。他充满激情，不顾一切地追求着与梅梅的禁忌之恋。",
     relationshipsText: "恋人：梅梅；",
-    quote: "只要有黄蝴蝶出现，他就在附近。"
+    quote: "无论他走到哪里，总有一群黄蝴蝶跟随着他。"
   },
   "gaston": {
     id: "gaston",
@@ -389,7 +389,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "局外人的孤独与离去",
     description: "阿玛兰妲·乌尔苏拉的比利时丈夫。他爱好航空，试图在马孔多建立航空邮件服务，性格超然，对妻子的出轨保持着一种近乎荒谬的宽容。",
     relationshipsText: "妻子：阿玛兰妲·乌尔苏拉；情敌：奥雷里亚诺·巴比伦；",
-    quote: "马孔多是一个无法用常理理解的地方。"
+    quote: "他唯一的乐趣就是等待那架永远不会到来的飞机。"
   },
   "seventeen-aurelianitos": {
     id: "seventeen-aurelianitos",
@@ -406,7 +406,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "印记的孤独与牺牲",
     description: "奥雷里亚诺·布恩迪亚上校在战争期间与17个不同的女人所生的私生子。他们曾齐聚马孔多，并在圣灰星期三被神父在额头上画下了十字。",
     relationshipsText: "父亲：奥雷里亚诺·布恩迪亚上校；",
-    quote: "他们额头上的灰烬十字，是他们死亡的通行证。"
+    quote: "圣灰星期三，神父在他们额头上画下的灰烬十字，成了他们死亡的标记。"
   },
   "pietro-crespi": {
     id: "pietro-crespi",
@@ -423,7 +423,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "优雅的孤独与绝望",
     description: "来自意大利的音乐技师，带来了自动钢琴。他举止优雅，穿着精致，身上总是带着薰衣草的香气，代表着外界的文明与浪漫。",
     relationshipsText: "未婚妻：丽贝卡；追求对象：阿玛兰妲；",
-    quote: "他的手指在琴键上跳跃，却弹不出自己命运的乐章。"
+    quote: "他割腕自杀了，双手浸在散发着薰衣草香味的温水盆里。"
   },
   "gerineldo-marquez": {
     id: "gerineldo-marquez",
@@ -440,7 +440,7 @@ export const characters: Record<string, Character> = {
     solitudeType: "忠诚的孤独与等待",
     description: "奥雷里亚诺上校最忠诚的战友和朋友。他具有典型的军人气质，为人正直，一生都在苦苦等待阿玛兰妲的回心转意。",
     relationshipsText: "朋友：奥雷里亚诺上校；暗恋对象：阿玛兰妲；",
-    quote: "上校，马孔多在下雨。"
+    quote: "奥雷里亚诺，马孔多在下雨。"
   },
   "petra-cotes": {
     id: "petra-cotes",
